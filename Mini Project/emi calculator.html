@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>EMI Calculator</title>
+
+	<style>
+         .navbar{
+            background-color: #1c1f4c;
+            border-radius: 30px;
+            
+        }
+        .navbar ul{
+            overflow: auto;
+        }
+        .navbar li{
+            float:left;
+            list-style: none; 
+            margin: 13px 20px;
+            
+        }
+        .navbar li a{
+            padding: 3px 3px;
+            text-decoration: none;
+            color: white;
+        }
+        .navbar li a:hover{
+            color:#fccf17        }
+        .search{
+            float: right;
+            color: white;
+            padding: 12px 75px;
+        }
+        .navbar input{
+            border: 2px solid black;
+            border-radius: 14px;
+            padding: 3px 17px;
+            width: 129px;
+        }
+
+
+		body {
+			background-color: (#fff);
+			font-family: 'Trebuchet MS';
+		}
+
+		h1 {
+			font-size: 35px;
+		}
+
+		h1 {
+			font-size: 21px;
+			margin-top: 20px;
+		}
+
+		.calculator {
+			width: 400px;
+			height: 450px;
+			background-color: #037272;
+			position: absolute;
+			left: 50%;
+			top: 100%;
+			transform: translateX(-50%) translateY(-50%);
+			padding: 20px 0px 0px 100px;
+			border-radius: 50px;
+			color: white;
+		}
+
+		input {
+			padding: 7px;
+			width: 70%;
+			margin-top: 7px;
+		}
+
+		button {
+			color: white;
+			background-color: #1c1f4c;
+			width: 100px;
+			box-shadow: 10px;
+            border-radius: 10px;
+		}
+
+		footer {
+			text-align: center;
+			background-color: #1b1b1b;
+			color: #fff;
+			padding: 48px 24px;
+			position: relative;
+			z-index: 9999;
+
+		}
+	</style>
+</head>
+
+<body>
+    <div>
+        <header>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="calculator.html">Calculators</a></li>
+                    <li><a href="about us.html">About Us</a></li>
+                    <li><a href="contact.html">Contact us</a></li>
+                    <div class="search">
+                        <input type="text" name="search" id="search" placeholder="Search this website">
+                    </div>
+                </ul>
+            </nav>
+        </header>
+    </div>
+	<div>
+		<header style="top: 0ch;">
+			<h2
+				style="font-size: 30px; color: white;text-align: left; padding-left: 80px;background-color: rgb(29, 22, 21); border-radius: 10px;border:thick double#0de8f0 ; padding:20px 50px ;">
+				EMI CALCULATOR </h2>
+
+			<hr>
+
+
+			<P
+				style="background-color: rgb(236, 228, 228); border-radius: 40px ;top: 40%; padding:10px 50px 20px ;text-align: center;">
+				The Loan Calculator can
+				be used to calculate monthly EMI of the loan by taking the total amount, months to repay and the rate of
+				interest.
+				he approach is very simple, we will take 3 inputs from user i.e. amount (total loan amount), rate (the
+				rate of interest) and months (number o months to repay). Using these three, we can calculate the total
+				amount. At last we will display the total amount.
+			</P>
+
+
+	</div>
+
+	<div class="calculator">
+		<h1>EMI Calculator</h1>
+
+		<p>Amount (₹) : <br>
+			<input id="amount" type="number" onchange="Calculate()">
+		</p>
+
+		<p>Interest Rate :
+			<input id="rate" type="number" onchange="Calculate()">
+		</p>
+
+		<p>Months to Pay :
+			<input id="months" type="number" onchange="Calculate()">
+		</p>
+		<button>submit!</button>
+		<h1 id="total"></h1><br>
+		
+	</div>
+
+
+	<script>function Calculate() {
+
+
+			const amount = document.querySelector("#amount").value;
+
+			const rate = document.querySelector("#rate").value;
+
+			const months = document.querySelector("#months").value;
+
+			const interest = (amount * (rate * 0.01)) / months;
+
+			const total = ((amount / months) + interest).toFixed(2);
+
+			document.querySelector("#total")
+				.innerHTML = "EMI : (₹)" + total;
+		}
+	</script>
+	<footer style=" margin-top:6in ; background-color: rgb(39, 27, 27); color:rgb(250, 251, 252) ">
+
+
+		<H3> Contant us</H3>
+		<P><a href="https://www.instagram.com/aryabhatagroup/" ><img src=" https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/768px-Instagram_logo_2016.svg.png"alt="Insta image" width="20px"">Aryabhatagroup</a>
+	
+	
+		
+
+		<P> ©copyright 2020-2021 Aryabhata group & financial company.</P>
+
+		</p>
+	</footer>
+
+
+</body>
+
+
+
+</html>

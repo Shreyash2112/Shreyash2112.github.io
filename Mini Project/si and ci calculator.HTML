@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SI and CI Calculator</title>
+  <style>
+    
+    .calculator {
+			width: 400px;
+			height: 450px;
+			background-color: #037272;
+			position: absolute;
+			left: 50%;
+			top: 100%;
+			transform: translateX(-50%) translateY(-50%);
+			padding: 20px 0px 0px 100px;
+			border-radius: 50px;
+			color: white;
+		}
+
+    body {
+      background-color: (#edebd9);
+      font-family: 'Trebuchet MS';
+    }
+
+    input {
+      padding: 7px;
+      width: 70%;
+      margin-top: 7px;
+    }
+
+    button {
+			color: white;
+			background-color: #1c1f4c;
+			width: 100px;
+			box-shadow: 10px;
+            border-radius: 10px;
+		}
+
+    h1 {
+      font-size: 35px;
+    }
+
+    h1 {
+      font-size: 21px;
+      margin-top: 20px;
+    }
+
+    h2 {
+      font-size: 30px;
+      color: white;
+    
+      padding-left: 100px;
+      background-color: rgb(29, 22, 21);
+      border-radius: 10px;
+      border: thick double #0de8f0
+    }
+    footer {
+			text-align: center;
+			background-color: #1b1b1b;
+			color: #fff;
+			padding: 48px 24px;
+			position: relative;
+			z-index: 9999;}
+      .navbar{
+            background-color: #1c1f4c;
+            border-radius: 30px;
+            
+        }
+        .navbar ul{
+            overflow: auto;
+        }
+        .navbar li{
+            float:left;
+            list-style: none; 
+            margin: 13px 20px;
+            
+        }
+        .navbar li a{
+            padding: 3px 3px;
+            text-decoration: none;
+            color: white;
+        }
+        .navbar li a:hover{
+            color: #fccf17
+        }
+        .search{
+            float: right;
+            color: white;
+            padding: 12px 75px;
+        }
+        .navbar input{
+            border: 2px solid black;
+            border-radius: 14px;
+            padding: 3px 17px;
+            width: 129px;
+        }
+
+
+      
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="calculator.html">Calculators</a></li>
+            <li><a href="about us.html">About Us</a></li>
+            <li><a href="#">Contact us</a></li>
+            <div class="search">
+                <input type="text" name="search" id="search" placeholder="Search this website">
+            </div>
+        </ul>
+    </nav>
+</header>
+
+  <h2 style="padding: 20px 50px;">SIMPLE INTEREST & COMPOUND INTEREST CALCULATOR </h2>
+  <P style=" 
+  background-color: rgb(236, 228, 228); border-radius: 40px ;top: 40%; padding:10px 50px 20px ;text-align: center; 
+">You calculate the simple interest by multiplying the principal amount by the number of periods and the interest rate.
+    Simple interest does not compound, and you don't have to pay interest on interest.
+    Compared to compound interest, simple interest is easier to calculate and easier to understand. ... When it comes to
+    investing, compound interest is better since it allows funds to grow at a faster rate than they would in an account
+    with a simple interest rate.
+  </P>
+  <div class="calculator">
+    <h1>S.I. & C.I. Calculator</h1>
+
+    <p>Enter principal : <br>
+      <input id="principal" type=" number" onchange="Calculate()">
+    </p>
+
+    <p>Enter time period :
+      <input id="period" type="number" onchange="Calculate()">
+    </p>
+
+    <p>Enter rate of interest(%) :
+      <input id="interest" type="number" onchange="Calculate()">
+    </p>
+    
+    <h1 id="simple_interest"></h1>
+    <h1 id="compound_interest"></h1>
+    <button>submit!</button>
+		<h1 id="total"></h1><br>
+
+	
+  </div>
+
+
+  <script>function Calculate() {
+
+
+      const principal = document.querySelector("#principal").value;
+
+      const period = document.querySelector("#period").value;
+
+      const interest = document.querySelector("#interest").value;
+
+
+
+
+      const simple_interest = parseInt((principal * period * interest) / 100);
+      amount = principal * Math.pow((1 + interest / 100), period);
+      const compound_interest = amount - principal;
+      document.querySelector("#simple_interest")
+        .innerHTML = "simple_interest: (₹)" + simple_interest;
+      document.querySelector("#compound_interest")
+        .innerHTML = "compound_interest: (₹)" + compound_interest;
+    }
+  </script>
+  <footer style=" margin-top:6in ; background-color: rgb(39, 27, 27); color:rgb(250, 251, 252) ">
+
+
+<H3> Contant us</H3>
+<P><a href="https://www.instagram.com/aryabhatagroup/" ><img src=" https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/768px-Instagram_logo_2016.svg.png"alt="Insta image" width="20px"">Aryabhatagroup</a>
+
+
+
+
+<P> ©copyright 2020-2021 Aryabhata group & financial company.</P>
+
+</p>
+  </footer>
+  
+
+</body>
+
+</html>
